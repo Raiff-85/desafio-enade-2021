@@ -6,13 +6,13 @@ export default function Footer() {
       <div className="container">
         <div className={styles.inner}>
           <div className={styles.brand}>
-            <span className={styles.logo}>📐 PL Solver</span>
+            <span className={styles.logo}>📐 PL Resolver</span>
             <p>Solução computacional para o Desafio ENADE 2021</p>
           </div>
           <div className={styles.links}>
             <a href="#problema">Problema</a>
             <a href="#modelo">Modelagem</a>
-            <a href="#solver">Solver</a>
+            <a href="#resolver">Resolver</a>
             <a href="#passo-a-passo">Passo a Passo</a>
           </div>
           <div className={styles.info}>

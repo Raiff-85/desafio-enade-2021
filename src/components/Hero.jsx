@@ -54,8 +54,8 @@ export default function Hero() {
             <a href="#modelo" className="btn btn-primary">
               Ver Modelagem ↓
             </a>
-            <a href="#solver" className="btn btn-outline">
-              Executar Solver →
+            <a href="#resolver" className="btn btn-outline">
+              Executar Resolver →
             </a>
           </div>
         </div>

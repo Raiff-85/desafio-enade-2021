@@ -26,7 +26,7 @@ export default function StepByStep() {
                 quais pontos satisfazem <strong>todas</strong> as três restrições (viabilidade):
               </p>
               <div className={styles.systemGrid}>
-                <SystemSolver
+                <SystemResolver
                   title="Notebooks ∩ Netbooks → Vértice A ✓ VIÁVEL"
                   feasible
                   equations={[
@@ -36,7 +36,7 @@ export default function StepByStep() {
                   solution="x = 2,8 dias | y = 3,2 dias"
                   z="Z = 150.000(2,8) + 210.000(3,2) = R$ 1.092.000,00"
                 />
-                <SystemSolver
+                <SystemResolver
                   title="Desktops ∩ Notebooks → Vértice B ✓ VIÁVEL"
                   feasible={false}
                   equations={[
@@ -46,7 +46,7 @@ export default function StepByStep() {
                   solution="x = 2/3 ≈ 0,6667 | y = 16/3 ≈ 5,3333"
                   z="Z = 150.000(0,6667) + 210.000(5,3333) ≈ R$ 1.220.013,00"
                 />
-                <SystemSolver
+                <SystemResolver
                   title="Desktops ∩ Netbooks → Vértice C ✗ INVIÁVEL"
                   feasible={false}
                   infeasible
@@ -191,7 +191,7 @@ export default function StepByStep() {
   )
 }
 
-function SystemSolver({ title, equations, solution, z, feasible, infeasible }) {
+function SystemResolver({ title, equations, solution, z, feasible, infeasible }) {
   return (
     <div className={`${styles.system} ${infeasible ? styles.systemInfeasible : feasible ? styles.systemFeasible : ''}`}>
       <div className={styles.systemTitle}>{title}</div>

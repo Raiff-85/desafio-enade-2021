@@ -158,7 +158,7 @@ desafio-enade/
 │   │   ├── Hero.jsx             # Seção de apresentação
 │   │   ├── ProblemStatement.jsx # Enunciado formatado
 │   │   ├── MathModel.jsx        # Modelo matemático (KaTeX)
-│   │   ├── Solver.jsx           # Motor Simplex + controles
+│   │   ├── Resolver.jsx         # Motor Simplex + controles
 │   │   ├── GraphRegion.jsx      # Visualização gráfica
 │   │   ├── ResultCard.jsx       # Exibição da solução ótima
 │   │   └── StepByStep.jsx       # Solução passo a passo
@@ -180,7 +180,7 @@ desafio-enade/
 
 1. **Apresentação do Problema** — Enunciado completo formatado
 2. **Modelo Matemático** — Função objetivo + restrições em LaTeX
-3. **Solver Interativo** — Sliders/inputs para alterar demandas e custos
+3. **Resolver Interativo** — Sliders/inputs para alterar demandas e custos
 4. **Visualização Gráfica** — Região viável e ponto ótimo plotados
 5. **Solução Passo a Passo** — Vértices e avaliação da função objetivo
 6. **Resultado Final** — Destaque do custo mínimo e dias de operação
@@ -195,15 +195,15 @@ desafio-enade/
 - [ ] Configurar `vercel.json`
 - [ ] Estruturar pastas e componentes base
 
-### Fase 2 — Modelagem e Solver (Dia 1)
+### Fase 2 — Modelagem e Resolver (Dia 1)
 - [ ] Implementar algoritmo Simplex em `simplex.js`
-- [ ] Implementar cálculo de vértices em `graphHelper.js`
+- [ ] Implementar cálculo de vértices in `graphHelper.js`
 - [ ] Criar componente `MathModel.jsx` com KaTeX
 
 ### Fase 3 — Interface (Dia 1)
 - [ ] Criar layout com design moderno (dark mode, glassmorphism)
 - [ ] Componente `GraphRegion.jsx` com Canvas
-- [ ] Componente `Solver.jsx` interativo
+- [ ] Componente `Resolver.jsx` interativo
 - [ ] Componente `ResultCard.jsx`
 - [ ] Componente `StepByStep.jsx`
 

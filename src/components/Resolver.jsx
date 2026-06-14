@@ -2,7 +2,7 @@ import { useState, useMemo } from 'react'
 import { findVertices, findOptimum } from '../utils/graphHelper'
 import { simplexBigM } from '../utils/simplex'
 import GraphRegion from './GraphRegion'
-import styles from './Solver.module.css'
+import styles from './Resolver.module.css'
 
 const DEFAULT_PARAMS = {
   demandDesktops: 16000,
@@ -16,7 +16,7 @@ function fmt(n) {
   return parseFloat(n.toFixed(4)).toLocaleString('pt-BR', { maximumFractionDigits: 4 })
 }
 
-export default function Solver() {
+export default function Resolver() {
   const [params, setParams] = useState(DEFAULT_PARAMS)
   const [solved, setSolved] = useState(false)
 
@@ -48,15 +48,15 @@ export default function Solver() {
   const handleReset = () => { setParams(DEFAULT_PARAMS); setSolved(false) }
 
   return (
-    <section id="solver" className={styles.section}>
+    <section id="resolver" className={styles.section}>
       <div className="container">
         <div className={styles.header}>
-          <span className="badge badge-green">⚡ Solver Interativo</span>
+          <span className="badge badge-green">⚡ Resolver Interativo</span>
           <h2 className="section-title" style={{ marginTop: '1rem' }}>
             Encontrar a <span className="gradient-text">Solução Ótima</span>
           </h2>
           <p className="section-subtitle">
-            Ajuste os parâmetros do problema e execute o solver para obter a solução ótima
+            Ajuste os parâmetros do problema e execute o resolver para obter a solução ótima
           </p>
         </div>
 
