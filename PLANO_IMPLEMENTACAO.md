@@ -1,6 +1,6 @@
 # 📋 Plano de Implementação — Desafio ENADE 2021: Programação Linear
 
-> **Disciplina:** Sistemas de Informação — ENADE 2021  
+> **Disciplina:** Sistemas de Apoio à Gestão — Desafio ENADE 2021  
 > **Tema:** Otimização de Produção via Programação Linear  
 > **Stack:** React + Vite (SPA, deploy via Vercel)  
 > **Repositório:** https://github.com/Raiff-85/desafio-enade-2021.git
@@ -83,56 +83,54 @@ Sujeito a:
   y ≥ 0
 ```
 
-### 1.7 Solução Ótima (Método Gráfico / Vértices Viáveis)
+### 1.7 Solução Ótima (Método Gráfico / Simplex)
 
-Os candidatos a ponto ótimo são as **interseções viáveis** das restrições:
+Os **vértices da região viável** (interseções das restrições ativas) são encontrados resolvendo os sistemas:
 
-**Ponto A — Interseção: Notebooks ∩ Netbooks (VIÁVEL ✓)**
+**Ponto A — Interseção: Desktops ∩ Netbooks**
+```
+4x + y = 8
+2x + 7y = 28
+
+→ Subst: y = 8 - 4x em 2x + 7(8-4x) = 28
+→ 2x + 56 - 28x = 28
+→ -26x = -28
+→ x = 14/13 ≈ 1,077
+→ y = 8 - 4(14/13) = 48/13 ≈ 3,692
+```
+
+**Ponto B — Interseção: Desktops ∩ Notebooks**
+```
+4x + y = 8
+x + y = 6
+
+→ 3x = 2 → x = 2/3
+→ y = 6 - 2/3 = 16/3
+```
+
+**Ponto C — Interseção: Notebooks ∩ Netbooks**
 ```
 x + y = 6
 2x + 7y = 28
 
 → x = 6 - y → 2(6-y) + 7y = 28
-→ 12 + 5y = 28 → y = 3,2
+→ 12 + 5y = 28
+→ y = 16/5 = 3,2
 → x = 6 - 3,2 = 2,8
-
-Verificação: 4(2,8) + 3,2 = 14,4 ≥ 8 ✓ (Desktops OK)
 ```
 
-**Ponto B — Interseção: Desktops ∩ Notebooks (VIÁVEL ✓)**
-```
-4x + y = 8
-x + y = 6
+**Avaliação da Função Objetivo nos Vértices:**
 
-→ 3x = 2 → x = 2/3 ≈ 0,6667
-→ y = 6 - 2/3 = 16/3 ≈ 5,3333
+| Ponto | x     | y     | Z = 150.000x + 210.000y    |
+|-------|-------|-------|---------------------------|
+| A     | ≈1,077| ≈3,692| ≈ R$ 937.020,00            |
+| B     | 2/3   | 16/3  | ≈ R$ 1.219.996,00           |
+| C     | 2,8   | 3,2   | = R$ 1.092.000,00           |
 
-Verificação: 2(0,6667) + 7(5,3333) = 1,333 + 37,333 = 38,67 ≥ 28 ✓ (Netbooks OK)
-```
+> **Solução Ótima:** Ponto **A** — x ≈ 1,077 dias (Manaus), y ≈ 3,692 dias (Sul)  
+> **Custo Mínimo:** ≈ R$ 937.020,00
 
-**Ponto C — Interseção: Desktops ∩ Netbooks (INVIÁVEL ✗)**
-```
-4x + y = 8
-2x + 7y = 28
-
-→ x = 14/13 ≈ 1,077, y = 48/13 ≈ 3,692
-
-Verificação Notebooks: 1,077 + 3,692 = 4,769 < 6 ✗
-→ PONTO FORA DA REGIÃO VIÁVEL — Descartado!
-```
-
-**Avaliação da Função Objetivo nos Vértices VIÁVEIS:**
-
-| Ponto | x     | y     | Z = 150.000x + 210.000y  | Viável? |
-|-------|-------|-------|--------------------------|---------|
-| **A** | **2,8** | **3,2** | **R$ 1.092.000,00** | ✓ Sim |
-| B     | 0,6667| 5,3333| ≈ R$ 1.220.013,00        | ✓ Sim   |
-| C     | 1,077 | 3,692 | — (inviável)             | ✗ Não   |
-
-> **Solução Ótima:** Ponto **A** — x = 2,8 dias (Manaus), y = 3,2 dias (Sul)  
-> **Custo Mínimo Z* = R$ 1.092.000,00**
->
-> As restrições ativas no ótimo são: **Notebooks** (x+y = 6 exato) e **Netbooks** (2x+7y = 28 exato).
+*Obs: em contexto prático, os dias podem ser arredondados para valores inteiros (programação linear inteira), verificando a viabilidade das restrições.*
 
 ---
 
