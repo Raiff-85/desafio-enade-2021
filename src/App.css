@@ -1,0 +1,62 @@
+/* ===== NAVBAR ===== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(10, 10, 15, 0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.navbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 60px;
+}
+
+.navbar-brand {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color var(--transition);
+}
+.navbar-brand:hover { color: var(--accent-purple); }
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.navbar-links a {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition);
+}
+.navbar-links a:hover {
+  color: var(--text-primary);
+  background: rgba(255,255,255,0.06);
+}
+
+.navbar-github {
+  color: var(--accent-cyan) !important;
+  border: 1px solid rgba(62,207,207,0.3) !important;
+}
+.navbar-github:hover {
+  background: rgba(62,207,207,0.1) !important;
+  border-color: var(--accent-cyan) !important;
+}
+
+@media (max-width: 680px) {
+  .navbar-links a:not(.navbar-github) { display: none; }
+}

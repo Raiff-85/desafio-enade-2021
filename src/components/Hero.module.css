@@ -1,0 +1,116 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.bg {
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse at 65% -10%, rgba(108,99,255,0.35) 0%, transparent 55%),
+    radial-gradient(ellipse at 15% 90%, rgba(62,207,207,0.25) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(108,99,255,0.05) 0%, transparent 70%);
+  z-index: 0;
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(108,99,255,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(108,99,255,0.06) 1px, transparent 1px);
+  background-size: 60px 60px;
+  z-index: 0;
+  mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: 750px;
+  padding: 8rem 0 5rem;
+}
+
+.badges {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  margin-bottom: 1.25rem;
+}
+
+.desc {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  max-width: 580px;
+  margin-bottom: 2.5rem;
+}
+
+.stats {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem 0;
+  margin-bottom: 2.5rem;
+  width: fit-content;
+  backdrop-filter: blur(12px);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0 2rem;
+}
+
+.statValue {
+  font-size: 2rem;
+  font-weight: 800;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-weight: 500;
+}
+
+.statDivider {
+  width: 1px;
+  height: 2rem;
+  background: var(--border);
+  flex-shrink: 0;
+}
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .inner { padding: 6rem 0 3rem; }
+  .stats { width: 100%; justify-content: space-around; }
+  .stat { padding: 0 1rem; }
+}

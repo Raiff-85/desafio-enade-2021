@@ -1,0 +1,205 @@
+.section { background: var(--bg-primary); }
+.header { margin-bottom: 3rem; }
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+.fullWidth { grid-column: 1 / -1; }
+
+.card { padding: 1.75rem; }
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.cardIcon { font-size: 1.25rem; }
+.cardHeader h3 { font-size: 1rem; font-weight: 700; }
+
+.cardDesc {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.6;
+}
+
+/* Variables */
+.varBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.varItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(0,0,0,0.3);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1rem;
+}
+.varName {
+  font-size: 1.5rem;
+  font-weight: 800;
+  font-family: var(--font-mono);
+  color: var(--accent-purple);
+  min-width: 24px;
+  text-align: center;
+}
+.varEq { color: var(--text-muted); font-size: 0.9rem; }
+.varDesc { font-size: 0.88rem; color: var(--text-secondary); line-height: 1.4; }
+.varDesc strong { color: var(--text-primary); }
+
+.note {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-style: italic;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+}
+
+/* Objective */
+.objCard { background: var(--gradient-card); border-color: var(--border-accent); }
+
+.formulaMain {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(0,0,0,0.4);
+  border-radius: var(--radius-md);
+  margin-bottom: 1rem;
+}
+.formulaLabel {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 0.5rem;
+}
+.formula {
+  font-size: 1.4rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: var(--text-primary);
+}
+.var { color: var(--accent-purple); font-weight: 800; }
+.formulaNote { font-size: 0.78rem; color: var(--text-muted); margin-top: 0.5rem; font-family: var(--font-mono); }
+
+.costBreakdown { display: flex; flex-direction: column; gap: 0.5rem; }
+.costItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  padding: 0.5rem 0.75rem;
+  background: rgba(0,0,0,0.2);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+}
+.costVal { font-family: var(--font-mono); color: var(--accent-cyan); font-weight: 600; }
+
+/* Constraints */
+.constraintsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.constraint {
+  background: rgba(0,0,0,0.3);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  border: 1px solid var(--border);
+  transition: border-color var(--transition);
+}
+.constraint:hover { border-color: var(--border-accent); }
+
+.constraintHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+}
+.constraintIcon { font-size: 1rem; }
+
+.constraintFormula {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+  padding: 0.5rem 0.75rem;
+  background: rgba(108,99,255,0.1);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--accent-purple);
+}
+
+.constraintSimplified {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--accent-cyan);
+  margin-bottom: 0.75rem;
+  padding-left: 0.25rem;
+}
+
+.constraintExp {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border);
+}
+
+/* Complete Model */
+.completeModel {
+  background: rgba(0,0,0,0.4);
+  border-color: rgba(74,222,128,0.2);
+}
+
+.modelBox {
+  background: rgba(0,0,0,0.5);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  border: 1px solid rgba(74,222,128,0.15);
+}
+.modelSection {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+.modelLabel {
+  min-width: 110px;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--accent-green);
+  font-weight: 700;
+  padding-top: 0.15rem;
+}
+.modelCode {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.modelConstraints {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.modelConstraints code {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+.nonNeg { color: var(--text-muted) !important; font-style: italic; }
+.modelDivider { height: 1px; background: var(--border); margin: 1rem 0; }
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: 1fr; }
+  .constraintsGrid { grid-template-columns: 1fr; }
+}
